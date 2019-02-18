@@ -16,7 +16,7 @@ module.exports.updateCourses = function updateCourses(req, res, next) {
 
 module.exports.deleteCourses = function deleteCourses(req, res, next) {
   ourcoursescoursesIdController.deleteCourses(req.swagger.params, res, next);
-}
+};
 //'use strict'
 
 //var varcoursescoursesIdController = require('./coursescoursesIdControllerService');

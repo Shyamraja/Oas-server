@@ -3,18 +3,18 @@ const courses=
     [
         {
             ID: i++,
-            Name:"course name",
-            Description:" course description"
+            Name:"Javascript",
+            Description:"Use of Javascript in frontend"
         },
         {
             ID: i++,
-            Name:"course name",
-            Description:"course description"
+            Name:"Php",
+            Description:"Php framework Symfony"
         },
         {
             ID: i++,
-            Name:"course name",
-            Description:"course description"
+            Name:"React",
+            Description:"using React in Frontend"
         }
     ];
     const findIndex = id => {
@@ -51,10 +51,13 @@ const courses=
     };
     
     module.exports.putCourse = (course) => {
-        let index = findIndex(course.courseID);
+        console.log("put courses before", courses);
+     let index = findIndex(course.ID);
+        //let index = findIndex(course.ID);
         if (index >=0) {
             courses[index].courseName = course.courseName;
             courses[index].description = course.description;
+            console.log("put courses after", courses);
             return true;
         } else {
             return false;
