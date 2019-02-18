@@ -7,9 +7,12 @@ module.exports.funcstudentsstudentIDPARAMETERS = function funcstudentsstudentIDP
 };
 
 module.exports.getStudents = function getStudents(req, res, next) {
-   const id = req.studentId.value;
-   console.log("get student id", id);
-    const student = students.getStudent(id);
+   
+   console.log("student request", req);
+   
+   const id = +req.studentsId.value;
+   console.log("get studentid", id);
+   const student = students.getStudent(id);
     if (student) {
       res.status(200).json(student);
   } else {
@@ -33,11 +36,20 @@ module.exports.updateStudents = function updateStudents(req, res, next) {
 module.exports.deleteStudents = function deleteStudents(req, res, next) {
   //res.send({
     //message: 'This is the mockup controller for deleteStudents'
-  const deleteId = req.studentId.value;
-  if (students.deleteStudent(deleteId)){
+  const StudentId = +req.studentsId.value;
+  //const removeStudentIndex = ( s => s.Id).indexOf(removeStudentId);
+  if (students.deleteStudent(StudentId)){
     res.status(200).send("Student Delete OK");
   } else{
   res.status(404).send('NOT FOUND');
+  //let removeStudentId = parseInt(req.params.students_id);
+
+  
+  //students.splice(removeStudentIndex, 1);
+
+  //res.json(students);
+//})
+
         }
   };
 

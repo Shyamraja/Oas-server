@@ -38,7 +38,7 @@ const students= [
     module.exports.getStudent = id => {
         let index = findIndex(+id);
         if (index >= 0) {
-            return students[index];
+            return students[+index];
         } else {
             return false;
         }
@@ -54,13 +54,13 @@ const students= [
     };
     
     module.exports.putStudent = (student) => {
-    // console.log("put students before", students);
+     console.log("put students before", students);
      let index = findIndex(student.studentId);
       if (index) {
         students[index].studentname = student.studentname;
        students[index].studentAddress = student.studentAddress;
        students[index].Class = student.Class;
-      // console.log("put students after", students);
+       console.log("put students after", students);
        return true;
        } else {
            return false;
